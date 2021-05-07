@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Mystery+Quest&family=Raleway&display=swap');
+
+$main-header-font: 'Mystery Quest', cursive;
+$subheader-font: 'Mystery Quest', sans-serif;
+$body-font: 'Raleway', Arial, sans-serif;
+
+$accent-color-dark :#62572d;
+$dark-bg : #9fa09f;
+$light-bg :#c4c5c2;
+$button-bg : #c2a892;
+$button-select-bg : #c6f00c;
+$navbar-bg : #c2a892;
+$navbar2-bg : #59AF3B;
+$navbar1-bg : #52327B;
+$dark-text : #494b68;
+$light-text:#e2e2e2;
+
+$spacing-medium: 20px;
+$two-column-min-pixels:1000px;
+
+@mixin font($font-size, $family: $body-font, $color: $dark-text, $line-height: 1.5 ) {
+    font-family: $family;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+    text-decoration: none;
+  }
+
+  @mixin titleFont() {
+    @include font(28px, $main-header-font,$dark-text ) ;
+  }
+  
+  @mixin subtitleFont() {
+    @include font(24px, $subheader-font);
+  }
+  
+  @mixin bodyFont() {
+    @include font(16px);
+    font-weight: 300;
+  }
+
+  @mixin searchFont() {
+    @include font(12px);
+    font-weight: 300;
+  }
+
+  @mixin formLabel() {
+    @include bodyFont;
+    display: block;
+    margin: $spacing-medium 0;
+  }
+
+  @mixin formInput() {
+    @include bodyFont;
+    display: block;
+    width: 50%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-left: 10px;
+    background-color: #FFFFFF;
+    outline: none;
+  }
+
+  @mixin searchLabel() {
+    @include searchFont;
+    margin: $spacing-medium 0;
+  }
+
+  @mixin searchInput() {
+    @include searchFont;
+    width: 50%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-left: 10px;
+    background-color: #FFFFFF;
+    outline: none;
+  }

@@ -1,4 +1,5 @@
 ﻿using Narnia.Models;
+using Narnia.Models.Database;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
@@ -17,5 +18,7 @@ namespace Narnia.Data
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }
+        public DbSet<AnimalType> AnimalType { get; set; }
+        public DbSet<Animal> Animal { get; set; }
     }
 }

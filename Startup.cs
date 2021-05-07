@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Narnia.Data;
 using Narnia.Models;
+using Narnia.Repositories;
+using Narnia.Models.Database;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -49,6 +51,9 @@ namespace Narnia
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddTransient<IAnimalRepo, AnimalRepo>();
+            services.AddTransient<IAnimalTypeRepo, AnimalTypeRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
